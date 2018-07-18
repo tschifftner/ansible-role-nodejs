@@ -37,3 +37,9 @@
     name: '{{ item }}'
     state: present
   with_items: '{{ nodejs_apt_packages }}'
+
+- name: Create symlink to node
+  file:
+    src: /usr/bin/nodejs
+    dest: /usr/bin/node
+    state: link
