@@ -19,5 +19,4 @@ galaxy_info:
   galaxy_tags:
     - debian
     - ubuntu
-    - awscli
-    - aws
+    - nodejs
