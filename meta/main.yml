@@ -1,0 +1,23 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Tobias Schifftner
+  description: Installs nodejs on Debian/Ubuntu linux servers.
+  company: ambimax® GmbH
+  license: MIT
+  min_ansible_version: 2.5
+  platforms:
+  - name: Debian
+    versions:
+    - 8 (Jessie)
+    - 9 (Stretch)
+  - name: Ubuntu
+    versions:
+    - 16.04 (Xenial Xerus)
+    - 18.04 (Bionic Beaver)
+  galaxy_tags:
+    - debian
+    - ubuntu
+    - awscli
+    - aws

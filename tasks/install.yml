@@ -1,0 +1,39 @@
+---
+
+- name: Install required apt packages (newer systems)
+  apt:
+    pkg: '{{ item }}'
+  with_items:
+    - gpg
+    - apt-transport-https
+  when: >
+    (ansible_distribution == 'Debian' and ansible_distribution_version|int >= 9) or
+    (ansible_distribution == 'Ubuntu' and ansible_distribution_version|int >= '18.04')
+
+- name: Install required apt packages (newer systems)
+  apt:
+    pkg: '{{ item }}'
+  with_items:
+    - gnupg
+    - apt-transport-https
+  when: >
+    (ansible_distribution == 'Debian' and ansible_distribution_version|int <= 8) or
+    (ansible_distribution == 'Ubuntu' and ansible_distribution_version|int <= '16.04')
+
+- name: Install nodejs key
+  apt_key:
+    url: '{{ nodejs_apt_key }}'
+    state: present
+
+- name: Add nodejs repositories
+  apt_repository:
+    repo: '{{ item }}'
+    state: present
+    filename: nodejs
+  with_items: '{{ nodejs_repository_urls }}'
+
+- name: Install nodejs apt packages
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ nodejs_apt_packages }}'

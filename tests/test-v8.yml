@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: root
+
+  vars:
+    nodejs_version: '10.x'
+
+  roles:
+    - role_under_test

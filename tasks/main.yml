@@ -1,0 +1,5 @@
+---
+
+- name: Install nodejs
+  include: install.yml
+  tags: ['nodejs-install']

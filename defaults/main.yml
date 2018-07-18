@@ -1,0 +1,13 @@
+---
+
+nodejs_version: '10.x'
+
+nodejs_repository_urls:
+  - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} {{ ansible_distribution_release }} main'
+  - 'deb-src https://deb.nodesource.com/node_{{ nodejs_version }} {{ ansible_distribution_release }} main'
+
+nodejs_apt_key: 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+
+nodejs_apt_packages:
+  - nodejs
+  - build-essential
