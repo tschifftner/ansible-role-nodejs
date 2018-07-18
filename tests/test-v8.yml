@@ -3,7 +3,7 @@
   remote_user: root
 
   vars:
-    nodejs_version: '10.x'
+    nodejs_version: '8.x'
 
   roles:
     - role_under_test
