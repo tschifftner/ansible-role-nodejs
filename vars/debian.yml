@@ -1,4 +1,0 @@
----
-
-nodejs_required_apt_packages:
-  - apt-transport-https

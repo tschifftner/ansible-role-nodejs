@@ -19,14 +19,6 @@
     pkg: 'apt-transport-https'
     cache_valid_time: 86400
     update_cache: yes
-#  when: >
-#    (ansible_distribution == 'Debian') or
-#    (ansible_distribution == 'Ubuntu' and ansible_distribution_version|int <= '16.04')
-
-- name: Install required apt packages
-  apt:
-    pkg: '{{ item }}'
-  with_items: '{{ nodejs_required_apt_packages }}'
 
 - name: Install nodejs key
   apt_key:

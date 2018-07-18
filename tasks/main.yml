@@ -1,13 +1,5 @@
 ---
 
-- name: Include debian variables
-  include_vars: debian.yml
-  when: ansible_distribution == 'Debian'
-
-- name: Include ubuntu variables
-  include_vars: ubuntu.yml
-  when: ansible_distribution == 'Ubuntu'
-
 - name: Install nodejs
   include: install.yml
   tags: ['nodejs-install']
