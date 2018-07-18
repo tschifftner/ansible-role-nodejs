@@ -12,7 +12,7 @@ galaxy_info:
   - name: Debian
     versions:
     - jessie
-    - stretcj
+    - stretch
   - name: Ubuntu
     versions:
     - xenial
