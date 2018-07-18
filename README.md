@@ -13,7 +13,7 @@ ansible 2.0+
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```
-nodejs_version: '8.x'
+nodejs_version: '10.x'
 ```
 
 ## Dependencies
