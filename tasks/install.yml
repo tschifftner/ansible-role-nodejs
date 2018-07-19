@@ -37,3 +37,15 @@
     name: '{{ item }}'
     state: present
   with_items: '{{ nodejs_apt_packages }}'
+
+- name: Check if node executable exists
+  stat:
+    path: /usr/bin/node
+  register: nodejs_node_executable
+
+- name: Create symlink to node
+  file:
+    src: /usr/bin/nodejs
+    dest: /usr/bin/node
+    state: link
+  when: not nodejs_node_executable.stat.exists
